@@ -20,27 +20,28 @@
   </head>
 
   <body>
-    <div class="headerTop">
-      <h1>Weather Dashboard</h1>
+  <div class="container-fluid">
+    <div class="row header">
+      <h1 class="title">Weather Dashboard</h1>
     </div>
-    <div>
-      <div>
-        <h2>Search for a City</h2>
-        <input id="search-input">San Diego</input>
-        <Button id="searchBtn">Search</Button>
-      </div>
-      <div>
+    <div class="row">
+    <div class="col-3 s-sidebar mx-2">
+      <h2>Search for a City</h2>
+      <input id="search-input"></input>
+      <Button id="searchBtn">Search</Button>
+    </div>
+    <div class="row col my-2">
+      <div class="current-city">
         <h2>Current City</h2>
         <li>Temp: </li>
         <li>Wind: </li>
         <li>Humidity: </li>
       </div>
-      <div>
-        <h1>5-Day Forecast: </h1>
-      </div>
+    <div class="forecast row my-2">
+      <h2>5-Day Forecast: </h1>
     </div>
-
-    </div>
+  </div>
+</div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script
