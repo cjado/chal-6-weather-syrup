@@ -1,1 +1,10 @@
+.headerTop {
+    width: auto;
+    height: 10px;
+    background-color: linear-gradient(blue, black);
+}
 
+.h1 {
+    text-decoration-color: white;
+    margin-left: 60%;
+}
