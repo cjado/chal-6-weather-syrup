@@ -24,7 +24,7 @@ $(document).ready(function(){
     fetch(queryURL)
     .then(reponse => reponse.json())
     .then(data => {
-      $('#city').text(data.name + " (" + now.format('MM/DD/YYYY') + ")");
+      $('#city').text(data.name + " (" + now.format('YYYY/MM/DD') + ")");
       $('#temp').text(data.main.temp + " °F");
       $('#wind').text(data.wind.speed + " mph");
       $('#humidity').text(data.main.humidity +  "%");
@@ -37,7 +37,7 @@ $(document).ready(function(){
       var forecast = data.list;
       for (var i = 0; i < forecast.length; i += 8) {
         var forecastBox = $("<div>").addClass("forecast-box");
-        var date = $("<p>").text(forecast[i].dt_txt);
+        var date = $("<p>").text(forecast[i].dt_txt.slice(0, 10));
         var temp = $("<p>").text("Temp: " + forecast[i].main.temp + " °F");
         var humidity = $("<p>").text("Humidity: " + forecast[i].main.humidity + "%");
         forecastBox.append(date, temp, humidity);
