@@ -17,7 +17,6 @@ var fiveDayURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "
 
 $(document).ready(function(){
   $('#searchBtn').click(function(){
-
     var city = $('#search-input').val();
     var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey + "&units=imperial";
     var fiveDayURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIkey + "&units=imperial";
@@ -30,6 +29,7 @@ $(document).ready(function(){
       $('#temp').text(data.main.temp + " °F");
       $('#wind').text(data.wind.speed + " mph");
       $('#humidity').text(data.main.humidity +  "%");
+      console.log(queryURL)
     }).catch(error => {
       console.log(error);
     });
