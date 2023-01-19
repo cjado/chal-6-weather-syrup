@@ -12,6 +12,8 @@ $( function() {
 var APIkey = "43a3b99ad80001e205832282fce85783";
 var city;
 var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey + "&units=imperial";
+var now = dayjs()
+var fiveDayURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIkey + "&units=imperial";
 
 $(document).ready(function(){
   $('#searchBtn').click(function(){
@@ -21,13 +23,14 @@ $(document).ready(function(){
     fetch(queryURL)
     .then(reponse => reponse.json())
     .then(data => {
-      $('#city').text(data.name );
-      $('#temp').text(data.main.temp) + "°F";
+      $('#city').text(data.name + " (" + now.format('MM/DD/YYYY') + ")");
+      $('#temp').text(data.main.temp + " °F");
       $('#wind').text(data.wind.speed + " mph");
-      $('#humidity').text(data.main.humidity + "%");
+      $('#humidity').text(data.main.humidity +  "%");
     }).catch(error => {
       console.log(error);
     });
   });
 });
+
 
