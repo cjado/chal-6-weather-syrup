@@ -12,3 +12,10 @@
 .s-sidebar {
     border-right: solid black;
 }
+.forecast-box {
+    border-style: solid;
+    color: black;
+    margin:1.0rem;
+    /* display: flex;
+    flex-wrap: wrap; */
+}
