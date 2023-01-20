@@ -56,10 +56,10 @@ $(document).ready(function(){
 
     $('#resetBtn').click(function(){
       function resetInfo() {
-        $('#city').empty().append(html);
-        $('#temp').empty().append(html);
-        $('#wind').empty().append(html);
-        $('#humidity').empty().append(html);
+        $('#city').empty().removeClass("forecast-box");
+        // $('#temp').empty().append(html);
+        // $('#wind').empty().append(html);
+        // $('#humidity').empty().append(html);
       }
   
       resetInfo()
