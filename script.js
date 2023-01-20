@@ -22,13 +22,15 @@ $(document).ready(function(){
     var fiveDayURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIkey + "&units=imperial";
     console.log(queryURL)
 
+
+
     fetch(queryURL)
     .then(reponse => reponse.json())
     .then(data => {
       $('#city').text(data.name + " (" + now.format('YYYY/MM/DD') + ")");
-      $('#temp').text(data.main.temp + " °F");
-      $('#wind').text(data.wind.speed + " mph");
-      $('#humidity').text(data.main.humidity +  "%");
+      $('#temp').text("Temp: " + data.main.temp + " °F");
+      $('#wind').text("Wind: " + data.wind.speed + " mph");
+      $('#humidity').text("Humidity: " + data.main.humidity +  "%");
       console.log(queryURL)
     }).catch(error => {
       console.log(error);
@@ -50,8 +52,18 @@ $(document).ready(function(){
     .catch(error => {
       console.log(error);
     });
+});
 
-    })
+    $('#resetBtn').click(function(){
+      function resetInfo() {
+        $('#city').empty().append(html);
+        $('#temp').empty().append(html);
+        $('#wind').empty().append(html);
+        $('#humidity').empty().append(html);
+      }
+  
+      resetInfo()
+    });
   });
 
 
