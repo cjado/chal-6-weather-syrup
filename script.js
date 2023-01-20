@@ -48,23 +48,23 @@ $(document).ready(function(){
         forecastBox.append(date, temp, humidity);
         $(".forecast").append(forecastBox);
       }
+      $('#resetBtn').click(function(){
+        function resetInfo() {
+          var forecastBox = document.getElementById('forecast-box')
+          forecastBox.remove()
+          // $('#temp').empty().append(html);
+          // $('#wind').empty().append(html);
+          // $('#humidity').empty().append(html);
+        }
+    
+        resetInfo()
+      });
     })
     .catch(error => {
       console.log(error);
     });
 });
-
-    $('#resetBtn').click(function(){
-      function resetInfo() {
-        $('#city').empty().removeClass("forecast-box");
-        // $('#temp').empty().append(html);
-        // $('#wind').empty().append(html);
-        // $('#humidity').empty().append(html);
-      }
-  
-      resetInfo()
-    });
-  });
+});
 
 
 
