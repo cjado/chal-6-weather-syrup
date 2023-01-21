@@ -1,12 +1,12 @@
-$( function() {
-    var availableTags = [
-      "Houston",
-      "Austin"
-    ];
-    $( "#search-input" ).autocomplete({
-      source: availableTags
-    });
-  } );
+// $( function() {
+//     var availableTags = [
+//       "Houston",
+//       "Austin"
+//     ];
+//     $( "#search-input" ).autocomplete({
+//       source: availableTags
+//     });
+//   } );
 
 
 var APIkey = "43a3b99ad80001e205832282fce85783";
@@ -21,6 +21,8 @@ $(document).ready(function(){
     var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey + "&units=imperial";
     var fiveDayURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIkey + "&units=imperial";
     console.log(queryURL)
+
+    $('.forecast').empty();
 
     fetch(queryURL)
     .then(reponse => reponse.json())
@@ -49,6 +51,7 @@ $(document).ready(function(){
     })
     .catch(error => {
       console.log(error);
+
     });
 
     })
