@@ -9,8 +9,8 @@ var fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + 
 $(document).ready(function(){
   $('#searchBtn').click(function(){
     var city = $('#search-input').val();
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey + "&units=imperial";
-    var fiveDayURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIkey + "&units=imperial";
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey + "&units=imperial";
+    var fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIkey + "&units=imperial";
     console.log(queryURL)
 
     $('.forecast').empty();
