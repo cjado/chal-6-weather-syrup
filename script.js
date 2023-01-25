@@ -1,19 +1,10 @@
-// $( function() {
-//     var availableTags = [
-//       "Houston",
-//       "Austin"
-//     ];
-//     $( "#search-input" ).autocomplete({
-//       source: availableTags
-//     });
-//   } );
-
 
 var APIkey = "43a3b99ad80001e205832282fce85783";
 var city;
 var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey + "&units=imperial";
 var now = dayjs()
 var fiveDayURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIkey + "&units=imperial";
+
 
 $(document).ready(function(){
   $('#searchBtn').click(function(){
@@ -48,6 +39,7 @@ $(document).ready(function(){
         forecastBox.append(date, temp, humidity);
         $(".forecast").append(forecastBox);
       }
+      $('#resetBtn').click(function(){
         function resetInfo() {
           var forecastBox = document.getElementById('forecast-box')
           forecastBox.remove()
@@ -63,6 +55,7 @@ $(document).ready(function(){
       console.log(error);
 
     });
+});
 });
 
 
